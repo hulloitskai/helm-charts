@@ -7,7 +7,7 @@ _A personal [Helm](https://helm.sh) charts repository._
 Add this repository to Helm with the following command:
 
 ```bash
-helm repo add stevenxie https://stevenxie.github.io/helm-charts/
+helm repo add stevenxie https://charts.stevenxie.me/
 ```
 
 ## Index

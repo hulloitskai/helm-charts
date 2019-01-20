@@ -3,7 +3,7 @@ entries:
   merlin:
   - apiVersion: v1
     appVersion: 0.4.3
-    created: 2019-01-20T17:15:11.941719-05:00
+    created: 2019-01-20T19:13:49.060378-05:00
     description: A system for accessing company finance data from EDGAR.
     digest: bc70e05372ee85aadda071208eb086e7e278813323db1e47c028963aa87bd3b1
     home: https://github.com/stevenxie/merlin
@@ -18,7 +18,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.4.3
-    created: 2019-01-20T17:15:11.940689-05:00
+    created: 2019-01-20T19:13:49.059433-05:00
     description: A system for accessing company finance data from EDGAR.
     digest: aeb546d71b858d81569ac7fa257e9935061986f44ae59015491122eb4070f254
     home: https://github.com/stevenxie/merlin
@@ -34,7 +34,23 @@ entries:
   rgv:
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2019-01-20T17:15:11.945896-05:00
+    created: 2019-01-20T19:13:49.063116-05:00
+    description: |
+      A tool for visualizing the relationships amongst the users of a subreddit.
+    digest: e84c497cecf35c40c37ec695d9f437770e577b3559ee1ed4ff6c1a036ee60220
+    home: https://github.com/stevenxie/rgv
+    maintainers:
+    - email: dev@stevenxie.me
+      name: Steven Xie
+    name: rgv
+    sources:
+    - https://github.com/stevenxie/rgv
+    urls:
+    - charts/rgv-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    appVersion: 0.1.1
+    created: 2019-01-20T19:13:49.062696-05:00
     description: A system for accessing company finance data from EDGAR.
     digest: 886aee00cc6c41bd75cea05d03e47a7168f8c51f74d3746fc1c77982a60cebbc
     home: https://github.com/stevenxie/rgv
@@ -49,7 +65,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2019-01-20T17:15:11.944647-05:00
+    created: 2019-01-20T19:13:49.061499-05:00
     description: A system for accessing company finance data from EDGAR.
     digest: dabce96086c40592a6950faaa02a0a81d98c9b1986a00ef0fcd66cf34996eeb8
     home: https://github.com/stevenxie/rgv
@@ -62,4 +78,4 @@ entries:
     urls:
     - charts/rgv-0.1.0.tgz
     version: 0.1.0
-generated: 2019-01-20T17:15:11.939261-05:00
+generated: 2019-01-20T19:13:49.058916-05:00
