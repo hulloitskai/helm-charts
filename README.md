@@ -15,3 +15,4 @@ helm repo add stevenxie https://charts.stevenxie.me/
 - [`merlin`](https://github.com/stevenxie/merlin) -
   A system for accessing company finance data from EDGAR.
 - [`rgv`](https://github.com/stevenxie/rgv) - Reddit Graph Visualizer.
+- [`api`](https://github.com/stevenxie/api) - A personal API server.
