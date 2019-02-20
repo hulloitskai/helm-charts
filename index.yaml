@@ -3,9 +3,9 @@ entries:
   api:
   - apiVersion: v1
     appVersion: 0.3.2
-    created: 2019-02-20T09:38:57.377785-05:00
+    created: 2019-02-20T09:41:16.833272-05:00
     description: A personal API server.
-    digest: c2c47ccb03609655e47eb61c648c4d36180bf03248fd8f449ac545945d9f424f
+    digest: f2a5a447475e58dcdfa5babcf695366b60b2a6e82c90200d036b575624eae8f5
     home: https://github.com/stevenxie/api
     maintainers:
     - email: dev@stevenxie.me
@@ -14,11 +14,11 @@ entries:
     sources:
     - https://github.com/stevenxie/api
     urls:
-    - charts/api-0.3.0.tgz
-    version: 0.3.0
+    - charts/api-0.2.1.tgz
+    version: 0.2.1
   - apiVersion: v1
     appVersion: 0.2.0
-    created: 2019-02-20T09:38:57.377375-05:00
+    created: 2019-02-20T09:41:16.832857-05:00
     description: A personal API server.
     digest: 3ab92a6aaebe6c28967993034ae9acc318101a0d904c824125aacf3549daef0d
     home: https://github.com/stevenxie/api
@@ -33,7 +33,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: 0.1.0
-    created: 2019-02-20T09:38:57.376932-05:00
+    created: 2019-02-20T09:41:16.832435-05:00
     description: A personal API server.
     digest: ae351eb6e53de3f0b0d97f10e6431cdb7cfa1436823dd371a5a7833b4756e8c4
     home: https://github.com/stevenxie/api
@@ -49,7 +49,7 @@ entries:
   merlin:
   - apiVersion: v1
     appVersion: 0.4.3
-    created: 2019-02-20T09:38:57.379482-05:00
+    created: 2019-02-20T09:41:16.834046-05:00
     description: A system for accessing company finance data from EDGAR.
     digest: bc70e05372ee85aadda071208eb086e7e278813323db1e47c028963aa87bd3b1
     home: https://github.com/stevenxie/merlin
@@ -64,7 +64,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.4.3
-    created: 2019-02-20T09:38:57.378651-05:00
+    created: 2019-02-20T09:41:16.833637-05:00
     description: A system for accessing company finance data from EDGAR.
     digest: aeb546d71b858d81569ac7fa257e9935061986f44ae59015491122eb4070f254
     home: https://github.com/stevenxie/merlin
@@ -80,7 +80,7 @@ entries:
   rgv:
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2019-02-20T09:38:57.381788-05:00
+    created: 2019-02-20T09:41:16.835117-05:00
     description: |
       A tool for visualizing the relationships amongst the users of a subreddit.
     digest: e84c497cecf35c40c37ec695d9f437770e577b3559ee1ed4ff6c1a036ee60220
@@ -96,7 +96,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2019-02-20T09:38:57.381-05:00
+    created: 2019-02-20T09:41:16.834743-05:00
     description: A system for accessing company finance data from EDGAR.
     digest: 886aee00cc6c41bd75cea05d03e47a7168f8c51f74d3746fc1c77982a60cebbc
     home: https://github.com/stevenxie/rgv
@@ -111,7 +111,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2019-02-20T09:38:57.380253-05:00
+    created: 2019-02-20T09:41:16.834393-05:00
     description: A system for accessing company finance data from EDGAR.
     digest: dabce96086c40592a6950faaa02a0a81d98c9b1986a00ef0fcd66cf34996eeb8
     home: https://github.com/stevenxie/rgv
@@ -124,4 +124,4 @@ entries:
     urls:
     - charts/rgv-0.1.0.tgz
     version: 0.1.0
-generated: 2019-02-20T09:38:57.375677-05:00
+generated: 2019-02-20T09:41:16.831867-05:00
