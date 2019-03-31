@@ -1,0 +1,20 @@
+{{- $name := include "varnish.name" . -}}
+{{- $fullName := include "varnish.fullname" . -}}
+
+{{- $config := .Values.config -}}
+{{- $data := required ".Values.config.data is required" $config.data }}
+
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ $name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "varnish.chart" . }}
+
+data:
+  {{ $config.filename }}: |-
+    {{- $data | nindent 4 }}

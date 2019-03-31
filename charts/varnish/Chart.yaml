@@ -1,0 +1,14 @@
+apiVersion: v1
+version: "0.1.0"
+
+name: varnish
+appVersion: "6.2.0"
+description: A really fast, caching reverse-proxy.
+
+home: https://github.com/stevenxie/helm-charts/tree/master/charts/varnish
+sources:
+  - https://github.com/stevenxie/helm-charts
+
+maintainers:
+  - name: Steven Xie
+    email: dev@stevenxie.me

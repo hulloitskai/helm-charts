@@ -1,0 +1,102 @@
+{{- $name := include "varnish.name" . -}}
+{{- $fullName := include "varnish.fullname" . -}}
+
+{{- $component := .Values -}}
+{{- $config := $component.config -}}
+{{- $storage := $component.storage -}}
+{{- $deploy := $component.deployment -}}
+{{- $image := $component.image -}}
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ $name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "varnish.chart" . }}
+
+spec:
+  replicas: {{ $component.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ $name }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      annotations:
+        checksum/config: {{ include (print .Template.BasePath "/configmap.yaml") . | sha256sum }}
+      labels:
+        app.kubernetes.io/name: {{ $name }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ $image.repository }}:{{ $image.tag }}"
+          imagePullPolicy: {{ $image.pullPolicy }}
+          command: ["varnishd"]
+          args:
+            - -Ff
+            - {{ $config.directory }}/{{ $config.filename }}
+            - -s
+          {{- if eq $storage.backend "file" }}
+          {{- $fileBackend := $storage.fileBackend -}}
+            - file,
+              {{- $fileBackend.hostPath.path }},
+              {{- $storage.size }},
+              {{- $fileBackend.granularity }},
+              {{- $fileBackend.advice }}
+          {{- else }}
+            - {{ $storage.backend }},{{ $storage.size }}
+          {{- end }}
+          volumeMounts:
+            - name: config
+              mountPath: {{ $config.directory }}
+          {{- if eq $storage.backend "file" }}
+            - name: storage
+              mountPath: {{ $storage.fileBackend.hostPath.path }}
+          {{- end }}
+          ports:
+            - name: http
+              containerPort: {{ $deploy.port }}
+              protocol: TCP
+          livenessProbe:
+            {{- $component.livenessProbe | toYaml | nindent 12 }}
+          readinessProbe:
+            {{- $component.readinessProbe | toYaml | nindent 12 }}
+          {{- with $component.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ $fullName }}
+      {{- if eq $storage.backend "file" }}
+      {{- $hostPath := $storage.fileBackend.hostPath -}}
+        - name: storage
+          hostPath:
+            path: {{ $hostPath.path }}
+            type: {{ $hostPath.type }}
+      {{- end }}
+      {{- with $component.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $component.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $component.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+  {{- with $deploy.strategy }}
+  strategy:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with $deploy.minReadySeconds }}
+  minReadySeconds: {{ . }}
+  {{- end }}

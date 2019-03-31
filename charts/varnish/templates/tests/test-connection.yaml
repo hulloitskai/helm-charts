@@ -1,0 +1,23 @@
+{{- $name := include "varnish.name" . -}}
+{{- $fullName := include "varnish.fullname" . -}}
+
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: "{{ $fullName }}-test-connection"
+  labels:
+    app.kubernetes.io/name: {{ $name }}
+    helm.sh/chart: {{ include "varnish.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  annotations:
+    "helm.sh/hook": test-success
+
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args:  ['{{ $fullName }}:{{ .Values.service.port }}']
+  restartPolicy: Never
