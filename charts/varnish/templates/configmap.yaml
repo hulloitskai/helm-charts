@@ -1,6 +1,5 @@
 {{- $name := include "varnish.name" . -}}
 {{- $fullName := include "varnish.fullname" . -}}
-
 {{- $config := .Values.config -}}
 {{- $data := required ".Values.config.data is required" $config.data }}
 

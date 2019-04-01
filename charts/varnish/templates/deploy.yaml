@@ -1,6 +1,5 @@
 {{- $name := include "varnish.name" . -}}
 {{- $fullName := include "varnish.fullname" . -}}
-
 {{- $component := .Values -}}
 {{- $config := $component.config -}}
 {{- $storage := $component.storage -}}
@@ -42,7 +41,7 @@ spec:
             - {{ $config.directory }}/{{ $config.filename }}
             - -s
           {{- if eq $storage.backend "file" }}
-          {{- $fileBackend := $storage.fileBackend -}}
+          {{- $fileBackend := $storage.fileBackend }}
             - file,
               {{- $fileBackend.hostPath.path }},
               {{- $storage.size }},
@@ -75,7 +74,7 @@ spec:
           configMap:
             name: {{ $fullName }}
       {{- if eq $storage.backend "file" }}
-      {{- $hostPath := $storage.fileBackend.hostPath -}}
+      {{- $hostPath := $storage.fileBackend.hostPath }}
         - name: storage
           hostPath:
             path: {{ $hostPath.path }}
