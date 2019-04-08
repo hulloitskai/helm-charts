@@ -3,7 +3,7 @@ entries:
   api:
   - apiVersion: v1
     appVersion: 0.3.4
-    created: 2019-03-31T21:35:02.623446-04:00
+    created: 2019-04-08T11:03:26.315262-04:00
     description: A personal API server.
     digest: 1776906e00d49ff133fc3c20af9f9fd0fcc8fb8b24d6624c79ee79aee7511296
     home: https://github.com/stevenxie/api
@@ -18,7 +18,7 @@ entries:
     version: 0.5.0
   - apiVersion: v1
     appVersion: 0.3.4
-    created: 2019-03-31T21:35:02.622689-04:00
+    created: 2019-04-08T11:03:26.314417-04:00
     description: A personal API server.
     digest: 052973958b6adc720554b93cf4ce71b9c52f53b0873dc98453cd5730c1dac1de
     home: https://github.com/stevenxie/api
@@ -33,7 +33,7 @@ entries:
     version: 0.4.5
   - apiVersion: v1
     appVersion: 0.3.4
-    created: 2019-03-31T21:35:02.621806-04:00
+    created: 2019-04-08T11:03:26.313536-04:00
     description: A personal API server.
     digest: 3409c4ec16ee4478057212c4d728df7e12895b7ce18ca0a397065c91a12f317e
     home: https://github.com/stevenxie/api
@@ -48,7 +48,7 @@ entries:
     version: 0.4.4
   - apiVersion: v1
     appVersion: 0.3.4
-    created: 2019-03-31T21:35:02.620949-04:00
+    created: 2019-04-08T11:03:26.312539-04:00
     description: A personal API server.
     digest: 7c37106f4aa56cad5b4a18ee1dab8bdc76053015aaf86761e3389af3f005920f
     home: https://github.com/stevenxie/api
@@ -63,7 +63,7 @@ entries:
     version: 0.3.4
   - apiVersion: v1
     appVersion: 0.3.4
-    created: 2019-03-31T21:35:02.620101-04:00
+    created: 2019-04-08T11:03:26.311677-04:00
     description: A personal API server.
     digest: 63d5c853abc3a2ae829e118d7a0ac5bbdef24a83bad1d5f5e85c80d507c0f1c5
     home: https://github.com/stevenxie/api
@@ -78,7 +78,7 @@ entries:
     version: 0.3.3
   - apiVersion: v1
     appVersion: 0.3.4
-    created: 2019-03-31T21:35:02.619231-04:00
+    created: 2019-04-08T11:03:26.310788-04:00
     description: A personal API server.
     digest: 59e803144e4dd76f6e987684e8a1264610d7806124e43cfca38786c5c09c8018
     home: https://github.com/stevenxie/api
@@ -93,7 +93,7 @@ entries:
     version: 0.3.2
   - apiVersion: v1
     appVersion: 0.3.4
-    created: 2019-03-31T21:35:02.618318-04:00
+    created: 2019-04-08T11:03:26.309945-04:00
     description: A personal API server.
     digest: 747b03ca127d7c4f0a6bb4c0ac4cdbfea164303dc3a8e2dc02638bfb4ef8d908
     home: https://github.com/stevenxie/api
@@ -108,7 +108,7 @@ entries:
     version: 0.3.1
   - apiVersion: v1
     appVersion: 0.3.4
-    created: 2019-03-31T21:35:02.617282-04:00
+    created: 2019-04-08T11:03:26.309086-04:00
     description: A personal API server.
     digest: da7947d72aa018eea1d19cd815efce2a53f8fd7f22a111690cacdf68c5786c56
     home: https://github.com/stevenxie/api
@@ -123,7 +123,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: 0.3.2
-    created: 2019-03-31T21:35:02.615461-04:00
+    created: 2019-04-08T11:03:26.308277-04:00
     description: A personal API server.
     digest: f2a5a447475e58dcdfa5babcf695366b60b2a6e82c90200d036b575624eae8f5
     home: https://github.com/stevenxie/api
@@ -138,7 +138,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: 0.2.0
-    created: 2019-03-31T21:35:02.614674-04:00
+    created: 2019-04-08T11:03:26.307345-04:00
     description: A personal API server.
     digest: 3ab92a6aaebe6c28967993034ae9acc318101a0d904c824125aacf3549daef0d
     home: https://github.com/stevenxie/api
@@ -153,7 +153,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: 0.1.0
-    created: 2019-03-31T21:35:02.613789-04:00
+    created: 2019-04-08T11:03:26.304787-04:00
     description: A personal API server.
     digest: ae351eb6e53de3f0b0d97f10e6431cdb7cfa1436823dd371a5a7833b4756e8c4
     home: https://github.com/stevenxie/api
@@ -169,7 +169,7 @@ entries:
   merlin:
   - apiVersion: v1
     appVersion: 0.4.3
-    created: 2019-03-31T21:35:02.625046-04:00
+    created: 2019-04-08T11:03:26.317274-04:00
     description: A system for accessing company finance data from EDGAR.
     digest: bc70e05372ee85aadda071208eb086e7e278813323db1e47c028963aa87bd3b1
     home: https://github.com/stevenxie/merlin
@@ -184,7 +184,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.4.3
-    created: 2019-03-31T21:35:02.624172-04:00
+    created: 2019-04-08T11:03:26.31613-04:00
     description: A system for accessing company finance data from EDGAR.
     digest: aeb546d71b858d81569ac7fa257e9935061986f44ae59015491122eb4070f254
     home: https://github.com/stevenxie/merlin
@@ -200,7 +200,7 @@ entries:
   rgv:
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2019-03-31T21:35:02.627328-04:00
+    created: 2019-04-08T11:03:26.319944-04:00
     description: |
       A tool for visualizing the relationships amongst the users of a subreddit.
     digest: e84c497cecf35c40c37ec695d9f437770e577b3559ee1ed4ff6c1a036ee60220
@@ -216,7 +216,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2019-03-31T21:35:02.626543-04:00
+    created: 2019-04-08T11:03:26.318989-04:00
     description: A system for accessing company finance data from EDGAR.
     digest: 886aee00cc6c41bd75cea05d03e47a7168f8c51f74d3746fc1c77982a60cebbc
     home: https://github.com/stevenxie/rgv
@@ -231,7 +231,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.1.1
-    created: 2019-03-31T21:35:02.625777-04:00
+    created: 2019-04-08T11:03:26.31806-04:00
     description: A system for accessing company finance data from EDGAR.
     digest: dabce96086c40592a6950faaa02a0a81d98c9b1986a00ef0fcd66cf34996eeb8
     home: https://github.com/stevenxie/rgv
@@ -247,7 +247,22 @@ entries:
   varnish:
   - apiVersion: v1
     appVersion: 6.2.0
-    created: 2019-03-31T21:35:02.628982-04:00
+    created: 2019-04-08T11:03:26.32361-04:00
+    description: A really fast, caching reverse-proxy.
+    digest: e371e98bac548a2792595b212317bc65ebca59b2573ec183f8e124aa241bca2f
+    home: https://github.com/stevenxie/helm-charts/tree/master/charts/varnish
+    maintainers:
+    - email: dev@stevenxie.me
+      name: Steven Xie
+    name: varnish
+    sources:
+    - https://github.com/stevenxie/helm-charts
+    urls:
+    - archives/varnish-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    appVersion: 6.2.0
+    created: 2019-04-08T11:03:26.321444-04:00
     description: A really fast, caching reverse-proxy.
     digest: 10d484b8c1288feaa8f2b37d5e408e7b9bdaf93b7ef8b874129ecd528e828491
     home: https://github.com/stevenxie/helm-charts/tree/master/charts/varnish
@@ -262,7 +277,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 6.2.0
-    created: 2019-03-31T21:35:02.628149-04:00
+    created: 2019-04-08T11:03:26.320751-04:00
     description: A really fast, caching reverse-proxy.
     digest: 7b25aa7ea21efea194eafdce44eb8e2881d7e6fa31bc3d335296e1b817fee728
     home: https://github.com/stevenxie/helm-charts/tree/master/charts/varnish
@@ -278,7 +293,7 @@ entries:
   web:
   - apiVersion: v1
     appVersion: 0.1.0
-    created: 2019-03-31T21:35:02.629458-04:00
+    created: 2019-04-08T11:03:26.32464-04:00
     description: A personal website.
     digest: da354682f4a98035de133385668d920f40e1c90727e1e24d753c86fb6595397f
     home: https://github.com/stevenxie/stevenxie.me
@@ -291,4 +306,4 @@ entries:
     urls:
     - archives/web-0.1.0.tgz
     version: 0.1.0
-generated: 2019-03-31T21:35:02.612076-04:00
+generated: 2019-04-08T11:03:26.30321-04:00

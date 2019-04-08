@@ -16,9 +16,10 @@ storage:
   # for details.
   backend: default
   fileBackend:
-    hostPath:
-      path: /tmp/varnish_storage.bin
-      type: FileOrCreate
+    # Leave empty to use a tmpfs.
+    hostPath: {}
+      # path: /tmp/varnish_storage.bin
+      # type: FileOrCreate
     advice: random
     granularity: ""
   size: 100M

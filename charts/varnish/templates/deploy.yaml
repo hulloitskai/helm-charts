@@ -42,8 +42,7 @@ spec:
             - -s
           {{- if eq $storage.backend "file" }}
           {{- $fileBackend := $storage.fileBackend }}
-            - file,
-              {{- $fileBackend.hostPath.path }},
+            - file,/mnt,
               {{- $storage.size }},
               {{- $fileBackend.granularity }},
               {{- $fileBackend.advice }}
@@ -55,7 +54,7 @@ spec:
               mountPath: {{ $config.directory }}
           {{- if eq $storage.backend "file" }}
             - name: storage
-              mountPath: {{ $storage.fileBackend.hostPath.path }}
+              mountPath: /mnt
           {{- end }}
           ports:
             - name: http
@@ -74,11 +73,14 @@ spec:
           configMap:
             name: {{ $fullName }}
       {{- if eq $storage.backend "file" }}
-      {{- $hostPath := $storage.fileBackend.hostPath }}
         - name: storage
+          {{- with $storage.fileBackend.hostPath }}
           hostPath:
-            path: {{ $hostPath.path }}
-            type: {{ $hostPath.type }}
+            path: {{ .path }}
+            type: {{ .type }}
+          {{- else }}
+          emptyDir: {}
+          {{- end }}
       {{- end }}
       {{- with $component.nodeSelector }}
       nodeSelector:
