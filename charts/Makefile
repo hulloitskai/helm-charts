@@ -20,7 +20,7 @@ lint: ## Lint and check code.
 	@$(MAKE) charts-lint -- $(__ARGS)
 clean: charts-clean ## Clean build artifacts.
 release: ## Release / deploy this project.
-	$(MAKE) charts-package -- $(__ARGS)
+	@$(MAKE) charts-package -- $(__ARGS)
 
 ## Show usage for the targets in this Makefile.
 help:
