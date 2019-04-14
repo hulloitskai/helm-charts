@@ -77,6 +77,14 @@ adminService:
   # NodePort used if type is NodePort
   # nodePort: 38877
 
+deployment:
+  strategy: {}
+    # type: RollingUpdate
+    # rollingUpdate:
+    #   maxSurge: 0
+    #   maxUnavailable: 1
+  # minReadySeconds: 10
+
 rbac:
   # Specifies whether RBAC resources should be created
   create: true
