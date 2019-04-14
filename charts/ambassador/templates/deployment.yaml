@@ -156,10 +156,10 @@ spec:
     {{- end }}
       imagePullSecrets:
         {{- toYaml .Values.imagePullSecrets | nindent 8 }}
-  {{- with $deploy.strategy }}
+  {{- with .Values.deployment.strategy }}
   strategy:
     {{- toYaml . | nindent 4 }}
   {{- end }}
-  {{- with $deploy.minReadySeconds }}
+  {{- with .Values.deployment.minReadySeconds }}
   minReadySeconds: {{ . }}
   {{- end }}
