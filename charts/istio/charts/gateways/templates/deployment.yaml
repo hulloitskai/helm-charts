@@ -41,6 +41,10 @@ spec:
 {{- if $.Values.global.priorityClassName }}
       priorityClassName: "{{ $.Values.global.priorityClassName }}"
 {{- end }}
+{{- if $spec.hostNetwork }}
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
+{{- end }}
 {{- if $.Values.global.proxy.enableCoreDump }}
       initContainers:
         - name: enable-core-dump
