@@ -1,9 +1,9 @@
 apiVersion: v1
-tillerVersion: '>=2.7.2-0'
-version: 1.1.2-custom-2
+version: 1.1.7-custom-1
+tillerVersion: ">=2.7.2-0"
 
 name: istio
-appVersion: 1.1.2
+appVersion: 1.1.7
 description: A custom Istio components chart.
 sources: ["http://github.com/istio/istio"]
 keywords:

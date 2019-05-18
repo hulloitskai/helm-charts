@@ -32,7 +32,6 @@ spec:
         {{- end }}
       annotations:
         sidecar.istio.io/inject: "false"
-        scheduler.alpha.kubernetes.io/critical-pod: ""
 {{- if $spec.podAnnotations }}
 {{ toYaml $spec.podAnnotations | indent 8 }}
 {{ end }}
@@ -72,6 +71,12 @@ spec:
           image: "{{ $.Values.global.hub }}/{{ $spec.sds.image }}:{{ $.Values.global.tag }}"
 {{- end }}
           imagePullPolicy: {{ $.Values.global.imagePullPolicy }}
+          resources:
+{{- if $spec.sds.resources }}
+{{ toYaml $spec.sds.resources | indent 12 }}
+{{- else }}
+{{ toYaml $.Values.global.defaultResources | indent 12 }}
+{{- end }}
           env:
           - name: "ENABLE_WORKLOAD_SDS"
             value: "false"
@@ -97,10 +102,9 @@ spec:
           ports:
             {{- range $key, $val := $spec.ports }}
             - containerPort: {{ $val.port }}
-              name: {{ $val.name }}
-              {{- with $val.hostPort }}
+            {{- with $val.hostPort }}
               hostPort: {{ . }}
-              {{- end }}
+            {{- end }}
             {{- end }}
             - containerPort: 15090
               protocol: TCP
@@ -110,8 +114,12 @@ spec:
           - router
           - --domain
           - $(POD_NAMESPACE).svc.{{ $.Values.global.proxy.clusterDomain }}
-          - --log_output_level
-          - 'info'
+        {{- if $.Values.global.proxy.logLevel }}
+          - --proxyLogLevel={{ $.Values.global.proxy.logLevel }}
+        {{- end}}
+        {{- if $.Values.global.logging.level }}
+          - --log_output_level={{ $.Values.global.logging.level }}
+        {{- end}}
           - --drainDuration
           - '45s' #drainDuration
           - --parentShutdownDuration
@@ -158,6 +166,10 @@ spec:
           {{- else }}
           - istio-pilot:15010
           {{- end }}
+          {{- if $spec.applicationPorts }}
+          - --applicationPorts
+          - "{{ $spec.applicationPorts }}"
+          {{- end }}
         {{- end }}
         {{- if $.Values.global.trustDomain }}
           - --trust-domain={{ $.Values.global.trustDomain }}
@@ -194,6 +206,11 @@ spec:
               fieldRef:
                 apiVersion: v1
                 fieldPath: status.podIP
+          - name: HOST_IP
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: status.hostIP
           - name: ISTIO_META_POD_NAME
             valueFrom:
               fieldRef:
@@ -282,6 +299,7 @@ spec:
       {{- end }}
       affinity:
       {{- include "gatewaynodeaffinity" (dict "root" $ "nodeSelector" $spec.nodeSelector) | indent 6 }}
+      {{- include "gatewaypodAntiAffinity" (dict "podAntiAffinityLabelSelector" $spec.podAntiAffinityLabelSelector "podAntiAffinityTermLabelSelector" $spec.podAntiAffinityTermLabelSelector) | indent 6 }}
 ---
 {{- end }}
 {{- end }}
