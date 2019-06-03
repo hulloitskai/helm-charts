@@ -29,12 +29,8 @@ image:
   tag: 6.2.0-alpine
   pullPolicy: IfNotPresent
 
-livenessProbe: &probe
-  httpGet:
-    path: /
-    port: http
-  initialDelaySeconds: 10
-readinessProbe: *probe
+livenessProbe: null
+readinessProbe: null
 
 deployment:
   port: 80

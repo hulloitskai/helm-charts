@@ -60,10 +60,14 @@ spec:
             - name: http
               containerPort: {{ $deploy.port }}
               protocol: TCP
+          {{- with $component.livenessProbe }}
           livenessProbe:
-            {{- $component.livenessProbe | toYaml | nindent 12 }}
+            {{- . | toYaml | nindent 12 }}
+          {{- end }}
+          {{- with $component.readinessProbe }}
           readinessProbe:
-            {{- $component.readinessProbe | toYaml | nindent 12 }}
+            {{- . | toYaml | nindent 12 }}
+          {{- end }}
           {{- with $component.resources }}
           resources:
             {{- toYaml . | nindent 12 }}
