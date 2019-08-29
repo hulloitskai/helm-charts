@@ -1,3 +1,2 @@
-## [Repository]
-## Packaged Helm releases.
-*.tgz
+# Packaged Helm releases.
+dist/
